@@ -9,7 +9,7 @@ const useUserAPIs = () => {
       errorMessage = "Failed to Register.",
       multipart = false,
     }) => {
-      const url = `/users`;
+      const url = `/auth/sign-up`;
       return await requestData({
         method: "post",
         url,
