@@ -16,6 +16,8 @@ import {
   getBookingDetails,
   getBookingUnavailableDates,
 } from "../../utils/bookings";
+import { useAuth } from "../../context/AuthContext";
+import { useModal } from "../../context/ModalContext";
 
 const PropertyReservation = () => {
   const { params, refreshPage } = usePageInfo();
@@ -35,6 +37,8 @@ const PropertyReservation = () => {
     extraChildGuests: 0,
     extraInfantGuests: 0,
   });
+  const { user } = useAuth();
+  const { openModal } = useModal();
 
   const today = new Date();
   const [date, setDate] = useState([
@@ -70,8 +74,13 @@ const PropertyReservation = () => {
       noOfInfants: guestInfo.noOfInfants,
     };
 
-    await createBooking({ data });
-    await fetchBookings();
+    if (!user) {
+      openModal("LoginModal");
+    } else {
+      await createBooking({ data });
+      await fetchBookings();
+    }
+
     refreshPage();
   };
 
