@@ -31,7 +31,7 @@ const schema = z.object({
 });
 
 const AuthForm = ({ isLogin }) => {
-  const { loginUser, createUser, loading } = useAuth();
+  const { loginUser, registerUser, loading } = useAuth();
   const { openModal, closeModal } = useModal();
   const {
     register,
@@ -45,7 +45,7 @@ const AuthForm = ({ isLogin }) => {
     if (isLogin) {
       await loginUser(data);
     } else {
-      await createUser(data);
+      await registerUser(data);
     }
     closeModal();
   };
