@@ -42,7 +42,7 @@ export const requestData = async ({
   } catch (err) {
     console.error(`Error with ${method.toUpperCase()} request:`, err);
 
-    toastNotify && toast.error(errorMessage);
+    toastNotify && toast.error(err?.response?.data?.message || errorMessage);
 
     throw err;
   }
