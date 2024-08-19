@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Color Variables */
+:root {
+  /* Primary Colors */
+  --primary-50: #fef2f3;
+  --primary-100: #fecdce;
+  --primary-200: #f9a9b2;
+  --primary-300: #f7869b;
+  --primary-400: #f46d83;
+  --primary-500: #e61e4d;
+  --primary-600: #d01747;
+  --primary-700: #b6123e;
+  --primary-800: #a11a3a;
+  --primary-900: #8e1a35;
+  --primary-950: #6e1227;
+
+  /* Secondary Colors */
+  --secondary-50: #f9fafb;
+  --secondary-100: #f3f4f6;
+  --secondary-200: #e5e7eb;
+  --secondary-300: #d1d5db;
+  --secondary-400: #9ca3af;
+  --secondary-500: #6b7280;
+  --secondary-600: #4b5563;
+  --secondary-700: #374151;
+  --secondary-800: #1f2937;
+  --secondary-900: #111827;
+  --secondary-950: #030712;
+
+  /* Tertiary Colors */
+  --tertiary-50: #fce4e8;
+  --tertiary-100: #f9a8b0;
+  --tertiary-200: #f473a1;
+  --tertiary-300: #f04e91;
+  --tertiary-400: #ec1e77;
+  --tertiary-500: #e31c5f;
+  --tertiary-600: #d70466;
+  --tertiary-700: #b6025b;
+  --tertiary-800: #9d014e;
+  --tertiary-900: #820043;
+  --tertiary-950: #6a0036;
+
+  /* Gradients */
+  --primary-gradient: linear-gradient(
+    to right,
+    #e61e4d 0%,
+    #e31c5f 50%,
+    #d70466 100%
+  );
+  --secondary-gradient: radial-gradient(ellipse at top, #374151, #111827);
+
+  /* Shadows */
+  --shadow-1: rgba(0, 0, 0, 0.12) 0px 6px 16px 0px;
+  --shadow-2: 0 3px 12px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.08);
+  --shadow-3: 0px 2px 6px 0px rgba(0, 0, 0, 0.13);
+}
+
+/* Global Styles */
+* {
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+  font-family: "Outfit", sans-serif;
+}
+
+/* Headings */
+h1,
+h2,
+h3 {
+  font-weight: 600;
+  color: var(--secondary-900);
+}
+
+h1 {
+  font-size: 26px;
+}
+
+h2 {
+  font-size: 22px;
+}
+
+h3 {
+  font-size: 16px;
+}
+
+/* Date Range Picker */
+.rdrMonth,
+.rdrCalendarWrapper {
+  width: 100% !important;
+}
+
+.rdrCalendarWrapper {
+  font-size: 14px !important;
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background: #a3a3a3;
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
+.scrollbar-hidden::-webkit-scrollbar-thumb {
+  background: transparent;
+}
