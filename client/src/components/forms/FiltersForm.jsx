@@ -18,7 +18,7 @@ const placeTypeLabels = {
 
 const FiltersForm = () => {
   const { resetSearchQuery, searchData, searchQuery } = useSearchQuery();
-  const { setSearchParams } = usePageInfo();
+  const { setSearchParams, navigate } = usePageInfo();
   const { closeModal } = useModal();
 
   const BtnText = useMemo(
@@ -28,6 +28,7 @@ const FiltersForm = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
+    navigate("/")
     setSearchParams(searchData);
     closeModal();
   };
