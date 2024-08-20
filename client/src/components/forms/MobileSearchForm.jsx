@@ -18,7 +18,7 @@ import DateFilter from "./filters/DateFilter";
 
 const MobileSearchForm = () => {
   const { searchData, resetSearchQuery, searchQuery } = useSearchQuery();
-  const { setSearchParams } = usePageInfo();
+  const { setSearchParams, navigate } = usePageInfo();
   const { closeModal } = useModal();
 
   const descriptions = {
@@ -37,6 +37,7 @@ const MobileSearchForm = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
+    navigate("/")
     setSearchParams(searchData);
     closeModal();
   };
