@@ -11,7 +11,7 @@ const MyProperties = ({ properties, fetchData }) => {
   };
 
   const handleDelete = async (propertyId) => {
-    await deleteProperty(propertyId);
+    await deleteProperty({id:propertyId});
     await fetchData();
   };
 
@@ -26,14 +26,14 @@ const MyProperties = ({ properties, fetchData }) => {
           >
             <PropertyCard property={item} />
             <div className="w-full flex flex-col gap-2">
-              <Button
+{/*               <Button
                 variant="secondary-gradient"
                 className="p-2 w-full"
                 onClick={() => handleUpdate(item.id)}
                 ariaLabel={`Update property ${item.title}`}
               >
                 Update Property
-              </Button>
+              </Button> */}
               <Button
                 variant="primary"
                 className="p-2 w-full"
